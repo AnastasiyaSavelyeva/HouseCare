@@ -1,0 +1,599 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #25252d;
+}
+
+.main {
+  background-image: url("../images/main.png");
+  background-size: cover;
+
+  .header {
+    padding: 20px 0;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+
+      .menu {
+        align-self: center;
+        cursor: pointer;
+      }
+
+      .logo {
+        text-align: center;
+
+        .logo-name {
+          .font();
+          font-size: 18px;
+          color: @color-white;
+        }
+      }
+
+      .call {
+        .call-phone {
+          font-size: 18px;
+          font-family: "Museo Sans Cyrl", sans-serif;
+          font-weight: 700;
+          color: @color-white;
+          text-align: end;
+        }
+
+        .call-effect {
+          display: flex;
+          margin-top: 21px;
+
+          .circles {
+            position: relative;
+            width: 50px;
+            height: 20px;
+
+            .call-circle {
+              position: absolute;
+              width: 7px;
+              height: 7px;
+              top: calc(50% - 3px);
+              left: calc(50% - 3px);
+              background: @color-gold;
+              border-radius: 50%;
+              z-index: 3;
+            }
+
+            .call-circle-2 {
+              position: absolute;
+              border: 1px solid rgb(255, 198, 0, 0.5);
+              border-radius: 50%;
+              box-shadow: 0 0 15px 0 rgba(236, 198, 107, 0.5);
+              width: 18px;
+              height: 18px;
+              top: calc(50% - 9px);
+              left: calc(50% - 9px);
+              animation: circle 1.5s ease-in-out infinite;
+              background-image: linear-gradient(45deg, @color-gold, @color-blue);
+              @keyframes circle {
+                0% {
+                  transform: scale(0);
+                  opacity: 1;
+                }
+                100% {
+                  transform: scale(1.5);
+                  opacity: 0;
+                }
+              }
+            }
+
+            .call-circle-3 {
+              border: 1px solid rgb(255, 198, 0);
+              border-radius: 50%;
+              box-shadow: 0 0 15px 0 rgba(236, 198, 107, 0.5);
+              position: absolute;
+              width: 28px;
+              height: 28px;
+              top: calc(50% - 14px);
+              left: calc(50% - 14px);
+              animation: circle-2 1.5s ease-in-out infinite;
+              background-image: linear-gradient(45deg, @color-gold, @color-blue);
+              @keyframes circle-2 {
+                0% {
+                  transform: scale(0);
+                  opacity: 1;
+                }
+                100% {
+                  transform: scale(2);
+                  opacity: 0;
+                }
+              }
+            }
+          }
+
+          .call-order {
+            a {
+              .font-700();
+              font-size: 16px;
+              color: @color-gold;
+              text-decoration: none;
+              border-bottom: 1px solid @color-gold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about {
+    .container {
+      .container();
+      position: relative;
+
+      .scroll {
+        position: absolute;
+        display: flex;
+        transform: rotate(-90deg);
+        left: -90px;
+        top: 470px;
+
+        .scroll-image {
+          display: inline-block;
+          transform: rotate(90deg);
+          margin-right: 51px;
+        }
+
+        .scroll-text {
+          .font-500();
+          display: inline-block;
+          font-size: 18px;
+          color: #BABABAFF;
+          line-height: 3.333;
+          text-align: center;
+        }
+      }
+
+      .about-center {
+        padding: 162px 0 275px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .about-title {
+          .font();
+          font-size: 50px;
+          color: rgb(236, 198, 107);
+          line-height: 1.2;
+          text-align: center;
+          max-width: 595px;
+          margin-bottom: 25px;
+        }
+
+        .about-text {
+          .font-700();
+          font-size: 18px;
+          color: rgb(255, 255, 255);
+          line-height: 3.333;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+
+        .btn {
+          .btn-gradient();
+          width: 300px;
+          box-sizing: border-box;
+        }
+      }
+
+      .social {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 180px;
+        right: 0;
+
+        a {
+          margin: 15px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.project {
+  .container {
+    .container();
+
+    .title {
+      .title();
+      margin-bottom: 70px;
+    }
+
+    .project-one {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 113px;
+      .project-card-image();
+      .project-card-text();
+    }
+
+    .project-two {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 70px;
+      .project-card-image();
+      .project-card-text();
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .more {
+      font-size: 18px;
+      .font-500();
+      color: #89898AFF;
+      text-align: center;
+
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.scheme {
+  padding: 120px 0;
+  margin-bottom: 100px;
+
+  .container {
+    .container();
+
+    .title {
+      .title();
+      margin-bottom: 83px;
+    }
+
+    .scheme-image {
+      position: relative;
+      max-width: 576px;
+      margin: 0 auto;
+
+      .scheme-1, .scheme-2, .scheme-3, .scheme-4, .scheme-5 {
+        .round {
+          position: absolute;
+          border-radius: 50%;
+          background-color: @color-gold;
+          box-shadow: 0 0 25.5px 4.5px rgba(0, 0, 0, 1);
+          width: 15px;
+          height: 15px;
+
+          &::after {
+            content: '';
+            position: absolute;
+            border: 1px solid @color-gold;
+            border-radius: 50%;
+            top: calc(50% - 12.5px);
+            left: calc(50% - 12.5px);
+            width: 23px;
+            height: 23px;
+          }
+        }
+
+        .sign-title {
+          font-size: 18px;
+          .font-500();
+          color: @color-white;
+          margin-bottom: 16px;
+        }
+
+        .sign-text {
+          font-size: 16px;
+          .font-100();
+          color: @color-white;
+          width: 270px;
+        }
+      }
+
+      .scheme-1 {
+        .round {
+          top: 105px;
+          left: 115px;
+
+          .line {
+            position: absolute;
+            top: -15px;
+            left: -200px;
+          }
+        }
+
+        .sign-card {
+          position: absolute;
+          top: 80px;
+          left: -300px;
+        }
+      }
+
+      .scheme-2 {
+        .round {
+          top: 320px;
+          left: 80px;
+
+          .line {
+            position: absolute;
+            top: 10px;
+            left: -100px;
+          }
+        }
+
+        .sign-card {
+          position: absolute;
+          top: 340px;
+          left: -250px;
+        }
+      }
+
+      .scheme-3 {
+        .round {
+          top: 480px;
+          left: 220px;
+
+          .line {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+          }
+        }
+
+        .sign-card {
+          position: absolute;
+          top: 500px;
+          left: 330px;
+        }
+      }
+
+      .scheme-4 {
+        .round {
+          top: 300px;
+          left: 390px;
+
+          .line {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+          }
+        }
+
+        .sign-card {
+          position: absolute;
+          top: 325px;
+          left: 630px;
+        }
+      }
+
+      .scheme-5 {
+        .round {
+          top: 150px;
+          left: 490px;
+
+          .line {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+          }
+        }
+
+        .sign-card {
+          position: absolute;
+          top: 130px;
+          left: 660px;
+        }
+      }
+    }
+  }
+}
+
+.steps {
+  .container {
+    .container();
+
+    .title {
+      .title();
+    }
+
+    .steps-counter {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: 290px 340px 280px;
+      padding-left: 100px;
+      padding-bottom: 90px;
+
+      .step {
+        display: flex;
+        padding: 121px 0 30px 0;
+
+        .step-image {
+          width: 71px;
+          position: relative;
+
+          .step-sign {
+            position: absolute;
+            z-index: 10;
+          }
+
+          .step-number {
+            position: absolute;
+            top: -68px;
+            left: -5px;
+            font-size: 70px;
+            .font();
+            color: #393943FF;
+            z-index: 4;
+          }
+        }
+
+        .step-description {
+          width: 263px;
+          margin-left: 8px;
+
+          .step-title {
+            font-size: 18px;
+            .font-500();
+            color: @color-white;
+            margin-bottom: 10px;
+          }
+
+          .step-text {
+            font-size: 18px;
+            .font-100();
+            color: @color-white;
+
+            a {
+              color: @color-white;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  .container {
+    position: relative;
+    .container();
+  .title {
+    .title();
+  }
+    .arrow-prev {
+      position: absolute;
+      left: 0;
+      top: 330px;
+      fill: @color-gold;
+    }
+  .slider {
+    max-width:1050px;
+    margin: 80px auto 0;
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      li[class="slick-active"] button {
+        background: @color-gold;
+      }
+      button {
+        margin-top: 40px;
+        background: transparent;
+        border: 1px solid @color-gold;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        &::before {
+          content: '';
+        }
+      }
+    }
+    .slick-slide {
+      padding-top:70px;
+      filter: blur(2px);
+      img {
+        width: 400px;
+        height: 290px;
+      }
+    }
+    .slick-center {
+      padding-top:0;
+      filter: none;
+      img {
+        width: 590px;
+        height: 420px;
+      }
+    }
+  }
+  .arrow-next {
+    position: absolute;
+    right: 0;
+    top: 330px;
+    fill: @color-gold;
+    width: 50px;
+    height: 50px;
+  }
+  }
+}
+
+.guarantees {
+  .container {
+    .container();
+    .title {
+      margin: 175px 0 70px 0;
+      .title();
+    }
+    .two-blocks {
+      display: flex;
+      justify-content: space-between;
+      .two-blocks-terms {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: #313139FF;
+        width: 588px;
+        padding: 30px 78px 30px 40px;
+        .two-blocks-description {
+          margin-left: 40px;
+          .two-blocks-title {
+            font-size: 18px;
+            .font-500();
+            color: @color-white;
+            margin-bottom: 15px;
+          }
+          .two-blocks-text {
+            font-size: 18px;
+            .font-100();
+            color: @color-white;
+          }
+        }
+      }
+    }
+    .three-blocks {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 60px;
+      .three-blocks-description {
+        width: 282px;
+        text-align: center;
+        .three-blocks-image {
+          display: inline-block;
+          border: 1px solid @color-gold;
+          border-radius: 50%;
+          padding: 36px 40px;
+        }
+        .three-blocks-title {
+          font-size: 18px;
+          .font-500();
+          color: @color-white;
+          margin: 30px 0 15px 0;
+        }
+
+        .three-blocks-text {
+          font-size: 18px;
+          .font-100();
+          color: @color-white;
+          line-height: 1.278;
+        }
+      }
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0 120px 0;
+    }
+
+  }
+}
+
+
+
+
+@import "variables";

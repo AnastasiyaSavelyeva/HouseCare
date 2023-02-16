@@ -1,0 +1,166 @@
+@font-face {
+  font-family: Neumann;
+  src: url("../fonts/Neumann.otf");
+}
+
+@font-face {
+  font-family: Museosanscyrl;
+  src: url("../fonts/museosanscyrl-100.ttf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: Museosanscyrl;
+  src: url("../fonts/museosanscyrl-300.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Museosanscyrl;
+  src: url("../fonts/museosanscyrl-500.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Museosanscyrl;
+  src: url("../fonts/museosanscyrl-700.ttf");
+  font-weight: 700;
+}
+
+.font-100() {
+  font-family: Museosanscyrl, sans-serif;
+  font-weight: 100;
+}
+.font-300() {
+  font-family: Museosanscyrl, sans-serif;
+  font-weight: 300;
+}
+.font-500() {
+  font-family: Museosanscyrl, sans-serif;
+  font-weight: 500;
+}
+.font-700() {
+  font-family: Museosanscyrl, sans-serif;
+  font-weight: 700;
+}
+.font() {
+  font-family: Neumann, sans-serif;
+}
+
+.container() {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title() {
+    .font();
+    font-size: 40px;
+    color: @color-gold;
+    text-align: center;
+  }
+
+.btn-gradient {
+    background-image: -moz-linear-gradient( 0deg, rgb(252,195,114) 0%, rgb(240,219,188) 100%);
+    background-image: -webkit-linear-gradient( 0deg, rgb(252,195,114) 0%, rgb(240,219,188) 100%);
+    background-image: -ms-linear-gradient( 0deg, rgb(252,195,114) 0%, rgb(240,219,188) 100%);
+    border-radius: 30px;
+    padding: 21px;
+    font-size: 18px;
+    color: @color-dark;
+    text-align: center;
+    .font-700();
+  }
+
+.btn-transparent {
+    border: 1px solid @color-white;
+    border-radius: 30px;
+    font-size: 18px;
+    .font-700();
+    color: @color-white;
+    padding: 21px;
+    text-align: center;
+    background-color: transparent;
+  }
+
+.project-card-text {
+  .project-description {
+    max-width: 510px;
+    .project-description-title {
+      font-size: 30px;
+      .font-500();
+      color: @color-white;
+      margin-bottom: 40px;
+    }
+    .project-description-text {
+      font-size: 18px;
+      .font-300();
+      color: @color-white;
+    }
+    .project-description-diff {
+      display: flex;
+      justify-content: space-between;
+      margin: 50px 0;
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        .font-500();
+        color: @color-gold;
+        border: 1px solid @color-gold;
+        border-radius: 50%;
+        padding: 0 10px;
+        width: 108px;
+        height: 108px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+    }
+    .btn-gradient {
+      width: 365px;
+      margin-bottom: 20px;
+    }
+    .btn-transparent {
+      width: 365px;
+    }
+  }
+}
+
+.project-card-image {
+  .project-images {
+    max-width: 707px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    .project-image {
+      grid-column: 1/4;
+      grid-row: 1/2;
+    }
+    .project-image-1 {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .project-image-2 {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    .project-image-3 {
+      grid-column: 3/4;
+      grid-row: 2/3;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+@color-white: #ffffff;
+@color-gold: #ecc66b;
+@color-dark: #25252d;
+@color-blue: #31394f;
+
+
+
