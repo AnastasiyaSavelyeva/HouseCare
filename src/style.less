@@ -27,101 +27,10 @@ body {
 
       .logo {
         text-align: center;
-
-        .logo-name {
-          .font();
-          font-size: 18px;
-          color: @color-white;
-        }
+        .logo-name();
       }
 
-      .call {
-        .call-phone {
-          font-size: 18px;
-          font-family: "Museo Sans Cyrl", sans-serif;
-          font-weight: 700;
-          color: @color-white;
-          text-align: end;
-        }
-
-        .call-effect {
-          display: flex;
-          margin-top: 21px;
-
-          .circles {
-            position: relative;
-            width: 50px;
-            height: 20px;
-
-            .call-circle {
-              position: absolute;
-              width: 7px;
-              height: 7px;
-              top: calc(50% - 3px);
-              left: calc(50% - 3px);
-              background: @color-gold;
-              border-radius: 50%;
-              z-index: 3;
-            }
-
-            .call-circle-2 {
-              position: absolute;
-              border: 1px solid rgb(255, 198, 0, 0.5);
-              border-radius: 50%;
-              box-shadow: 0 0 15px 0 rgba(236, 198, 107, 0.5);
-              width: 18px;
-              height: 18px;
-              top: calc(50% - 9px);
-              left: calc(50% - 9px);
-              animation: circle 1.5s ease-in-out infinite;
-              background-image: linear-gradient(45deg, @color-gold, @color-blue);
-              @keyframes circle {
-                0% {
-                  transform: scale(0);
-                  opacity: 1;
-                }
-                100% {
-                  transform: scale(1.5);
-                  opacity: 0;
-                }
-              }
-            }
-
-            .call-circle-3 {
-              border: 1px solid rgb(255, 198, 0);
-              border-radius: 50%;
-              box-shadow: 0 0 15px 0 rgba(236, 198, 107, 0.5);
-              position: absolute;
-              width: 28px;
-              height: 28px;
-              top: calc(50% - 14px);
-              left: calc(50% - 14px);
-              animation: circle-2 1.5s ease-in-out infinite;
-              background-image: linear-gradient(45deg, @color-gold, @color-blue);
-              @keyframes circle-2 {
-                0% {
-                  transform: scale(0);
-                  opacity: 1;
-                }
-                100% {
-                  transform: scale(2);
-                  opacity: 0;
-                }
-              }
-            }
-          }
-
-          .call-order {
-            a {
-              .font-700();
-              font-size: 16px;
-              color: @color-gold;
-              text-decoration: none;
-              border-bottom: 1px solid @color-gold;
-            }
-          }
-        }
-      }
+      .call()
     }
   }
 
@@ -593,7 +502,234 @@ body {
   }
 }
 
+.consultation {
+  margin-bottom: 65px;
 
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .container();
+
+    .consultation-image {
+      width: 615px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .consultation-form {
+      width: 512px;
+
+      .title {
+        .title();
+        margin-bottom: 40px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input:not(input[type='checkbox']) {
+          padding: 22px 27px;
+          box-sizing: border-box;
+          background: transparent;
+          border: 1px solid @color-white;
+          border-radius: 29px;
+          width: 409px;
+          height: 58px;
+          font-size: 18px;
+          .font-300();
+          color: @color-white;
+          margin-bottom: 20px;
+        }
+
+        .btn-gradient {
+          box-sizing: border-box;
+          margin-bottom: 30px;
+          width: 409px;
+          height: 60px;
+        }
+
+        label {
+          display: flex;
+          width: 409px;
+
+          input[type='checkbox'] {
+            visibility: hidden;
+            padding: 0;
+            margin-right: -13px;
+          }
+
+          input[type='checkbox'] + span {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 20px;
+            height: 20px;
+            border: 1px solid @color-white;
+
+            img {
+              visibility: hidden;
+            }
+          }
+
+          div {
+            width: 314px;
+            margin-left: 27px;
+            font-size: 14px;
+            .font-300();
+            color: @color-white;
+            line-height: 1.286;
+
+            a {
+              font-weight: bold;
+              color: @color-white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.map {
+  .container {
+    background-image: url("../images/map.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    .container();
+    .location {
+      position: absolute;
+      background-image: url("../images/location.png");
+      width: 20px;
+      height: 30px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 5px;
+        width: 10px;
+        height: 10px;
+        filter: blur(10px);
+        background-color: @color-gold;
+      }
+    }
+    .location-1 {
+      top: 220px;
+      left: 150px;
+    }
+    .location-2 {
+      top: 280px;
+      left: 230px;
+    }
+    .location-3 {
+      top: 360px;
+      left: 130px;
+    }
+    .location-4 {
+      top: 350px;
+      left: 250px;
+    }
+    .location-5 {
+      top: 320px;
+      left: 290px;
+    }
+    .location-6 {
+      top: 400px;
+      left: 310px;
+    }
+    .location-7 {
+      top: 210px;
+      right: 230px;
+    }
+    .location-8 {
+      top: 370px;
+      right: 230px;
+    }
+    .location-9 {
+      top: 480px;
+      right: 240px;
+    }
+    .location-10 {
+      top: 450px;
+      right: 280px;
+    }
+    .location-11 {
+      top: 290px;
+      right: 350px;
+    }
+    .map-center {
+      padding: 261px 367px 160px 391px;
+      text-align: center;
+      .title {
+          font-size: 60px;
+          .font();
+          color: @color-gold;
+          margin-bottom: 30px;
+          line-height: 1.2;
+      }
+
+      .map-text {
+        font-size: 18px;
+        .font-500();
+        color: @color-white;
+        line-height: 1.278;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .btn-gradient {
+        width: 306px;
+      }
+    }
+  }
+}
+
+footer {
+  padding: 50px 0 110px 0;
+  .container {
+    .container();
+    display: flex;
+    justify-content: space-between;
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 18px;
+      .font-500();
+      color: @color-white;
+      div:first-child {
+        margin-bottom: 30px;
+      }
+    }
+    .logo {
+      text-align: center;
+      margin-right: 80px;
+      div:first-child {
+        margin-bottom: 56px;
+      }
+      .logo-name {
+        .logo-name();
+      }
+      .social {
+        a:nth-child(2) {
+          margin: 0 30px;
+          display: inline-block;
+        }
+      }
+    }
+    .call {
+      .call();
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+  }
+}
 
 
 @import "variables";

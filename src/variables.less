@@ -49,11 +49,106 @@
   margin: 0 auto;
 }
 
+.logo-name() {
+  .font();
+  font-size: 18px;
+  color: @color-white;
+}
+
+.call() {
+  .call-phone {
+    font-size: 18px;
+    font-family: "Museo Sans Cyrl", sans-serif;
+    font-weight: 700;
+    color: @color-white;
+    text-align: end;
+  }
+
+  .call-effect {
+    display: flex;
+    margin-top: 21px;
+
+    .circles {
+      position: relative;
+      width: 50px;
+      height: 20px;
+
+      .call-circle {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        top: calc(50% - 3px);
+        left: calc(50% - 3px);
+        background: @color-gold;
+        border-radius: 50%;
+        z-index: 3;
+      }
+
+      .call-circle-2 {
+        position: absolute;
+        border: 1px solid rgb(255, 198, 0, 0.5);
+        border-radius: 50%;
+        box-shadow: 0 0 15px 0 rgba(236, 198, 107, 0.5);
+        width: 18px;
+        height: 18px;
+        top: calc(50% - 9px);
+        left: calc(50% - 9px);
+        animation: circle 1.5s ease-in-out infinite;
+        background-image: linear-gradient(45deg, @color-gold, @color-blue);
+        @keyframes circle {
+          0% {
+            transform: scale(0);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1.5);
+            opacity: 0;
+          }
+        }
+      }
+
+      .call-circle-3 {
+        border: 1px solid rgb(255, 198, 0);
+        border-radius: 50%;
+        box-shadow: 0 0 15px 0 rgba(236, 198, 107, 0.5);
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        top: calc(50% - 14px);
+        left: calc(50% - 14px);
+        animation: circle-2 1.5s ease-in-out infinite;
+        background-image: linear-gradient(45deg, @color-gold, @color-blue);
+        @keyframes circle-2 {
+          0% {
+            transform: scale(0);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(2);
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .call-order {
+      a {
+        .font-700();
+        font-size: 16px;
+        color: @color-gold;
+        text-decoration: none;
+        border-bottom: 1px solid @color-gold;
+      }
+    }
+  }
+}
+
 .title() {
     .font();
     font-size: 40px;
     color: @color-gold;
     text-align: center;
+    line-height: 1.2;
   }
 
 .btn-gradient {
@@ -61,6 +156,7 @@
     background-image: -webkit-linear-gradient( 0deg, rgb(252,195,114) 0%, rgb(240,219,188) 100%);
     background-image: -ms-linear-gradient( 0deg, rgb(252,195,114) 0%, rgb(240,219,188) 100%);
     border-radius: 30px;
+    border: none;
     padding: 21px;
     font-size: 18px;
     color: @color-dark;
