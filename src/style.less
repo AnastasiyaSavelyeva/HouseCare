@@ -11,8 +11,74 @@ body {
   background-image: url("../images/main.png");
   background-size: cover;
 
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    width: 14%;
+    height: 140%;
+    z-index: 50;
+    top: 0;
+    padding: 35px 90px 0 0;
+    background-color: @color-dark;
+
+    .close {
+      margin-bottom: 51px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .menu-title {
+      font-size: 40px;
+      .font();
+      color: @color-white;
+      margin-bottom: 60px;
+    }
+
+    li {
+      list-style: none;
+      margin-bottom: 31px;
+      &:hover {
+        margin-left: 18px;
+        list-style: outside;
+        color: @color-gold;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 18px;
+        .font-300();
+        color: @color-white;
+
+        &:hover {
+          color: @color-gold;
+          font-size: 18px;
+          .font-300();
+        }
+      }
+    }
+
+    .social {
+      padding-top: 40px;
+
+      a:nth-child(2) {
+        margin: 0 30px;
+        display: inline-block;
+      }
+
+      a:hover {
+        opacity: .7;
+      }
+    }
+  }
+
   .header {
     padding: 20px 0;
+    position: relative;
+
 
     .container {
       max-width: 1200px;
@@ -23,62 +89,6 @@ body {
       .burger {
         align-self: center;
         cursor: pointer;
-      }
-
-      .menu {
-        display: none;
-        flex-direction: column;
-        padding: 35px 0;
-        width: 250px;
-        background-color: @color-dark;
-
-        .close {
-          margin-bottom: 51px;
-        }
-
-        .menu-title {
-          font-size: 40px;
-          .font();
-          color: @color-white;
-          margin-bottom: 60px;
-        }
-
-        li {
-          list-style: none;
-          margin-bottom: 31px;
-          &:hover {
-            margin-left: 18px;
-            list-style: outside;
-            color: @color-gold;
-          }
-
-          a {
-            text-decoration: none;
-            font-size: 18px;
-            .font-300();
-            color: @color-white;
-
-            &:hover {
-              color: @color-gold;
-              font-size: 18px;
-              .font-300();
-            }
-          }
-        }
-
-        .social {
-          padding-top: 40px;
-
-          a:nth-child(2) {
-            margin: 0 30px;
-            display: inline-block;
-          }
-
-          a:hover {
-            opacity: .7;
-          }
-        }
-
       }
 
       .logo {
@@ -119,7 +129,7 @@ body {
       }
 
       .about-center {
-        padding: 162px 0 275px 0;
+        padding: 162px 0 353px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -205,7 +215,7 @@ body {
       .font-500();
       color: #89898AFF;
       text-align: center;
-
+      cursor: pointer;
       span {
         margin-left: 10px;
       }
@@ -472,6 +482,9 @@ body {
         width: 400px;
         height: 290px;
       }
+      .slide-description {
+        display: none;
+      }
     }
     .slick-center {
       padding-top:0;
@@ -479,6 +492,46 @@ body {
       img {
         width: 590px;
         height: 420px;
+        position: relative;
+      }
+      .slide-description {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        height: 80px;
+        background-color: #313139;
+        color: @color-white;
+        padding: 15px;
+        box-sizing: border-box;
+        .slide-description-one {
+          border-right: 1px solid @color-white;
+          padding: 0 30px 0 55px;
+          .slide-name {
+            margin-bottom: 20px;
+            .font-500();
+          }
+          .slide-address {
+            .font-300();
+          }
+        }
+        .slide-description-two {
+          padding: 0 45px;
+          .dimensions {
+            .font-500();
+            margin-bottom: 20px;
+            span {
+              .font-300();
+            }
+          }
+          .square {
+            .font-500();
+            span {
+              .font-300();
+            }
+          }
+        }
       }
     }
   }
@@ -698,40 +751,55 @@ body {
       }
     }
 
-    .popup {
+    .popup-fade {
       display: none;
-      background-image: url("../images/popup.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      max-width: 560px;
-      max-height: 480px;
-      position: fixed;
-      padding: 50px 72px 55px;
-      margin: 0 auto;
-      z-index: 300;
-      top: calc(50% - 280px);
-      left: calc(50% - 240px);
-
-      .close {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        cursor: pointer;
+      &:before {
+        content: '';
+        background: #000;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        z-index: 300;
       }
-
-      .popup-title {
-        font-size: 18px;
-        .font-500();
-        color: @color-white;
-        line-height: 1.278;
+      .popup {
+        background-image: url("../images/popup.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        max-width: 560px;
+        max-height: 480px;
+        position: fixed;
+        padding: 50px 72px 55px;
         margin: 0 auto;
-        width: 395px;
-        text-align: center;
-        padding-bottom: 30px;
-      }
+        z-index: 300;
+        top: calc(50% - 280px);
+        left: calc(50% - 240px);
 
-      .form();
+        .close {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        .popup-title {
+          font-size: 18px;
+          .font-500();
+          color: @color-white;
+          line-height: 1.278;
+          margin: 0 auto;
+          width: 395px;
+          text-align: center;
+          padding-bottom: 30px;
+        }
+        .form();
+      }
     }
   }
 }
