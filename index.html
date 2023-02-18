@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles/slick.css"/>
     <link rel="stylesheet" type="text/css" href="styles/slick-theme.css"/>
     <link rel="stylesheet" href="styles/magnific-popup.css">
+    <link rel="stylesheet" href="styles/sweetalert2.min.css">
     <link rel="icon" href="images/house.ico">
     <link rel="stylesheet/less" href="src/style.less">
     <script src="https://cdn.jsdelivr.net/npm/less" ></script>
@@ -584,10 +585,11 @@
             <img src="images/form.png" alt="house">
         </div>
         <div class="consultation-form">
-            <div class="title">Получите индивидуальную
+
+            <div class="title" id="consultation-title">Получите индивидуальную
                 консультацию
             </div>
-            <form action="https://testologia.site/checkout" method="post">
+                <form action="https://testologia.site/checkout" method="post" id="form1" class="form">
                 <label>
                     <input type="text" placeholder="Ваше имя" id="name">
                     <div class="error">Введите имя</div>
@@ -602,16 +604,17 @@
                     </button>
                 </div>
                 <label>
-                    <input type="checkbox" class="check checked" id="check">
+                    <input type="checkbox" class="check checked">
                     <span>
-                        <img src="images/tick.png" alt="tick" id="tick">
+                        <img src="images/tick.png" alt="tick" >
                     </span>
-                    <div id="agreement">Нажимая на кнопку, я даю согласие на обработку персональных данных и соглашаюсь с
+                    <div class="agreement">Нажимая на кнопку, я даю согласие на обработку персональных данных и соглашаюсь с
                         <a href="#">политикой конфиденциальности</a>
                     </div>
                     <div class="error-check">Мы не получили Вашего <span>согласия</span></div>
                 </label>
             </form>
+            <div class="thanks">Спасибо, мы свяжемся с вами в ближайшее время!</div>
         </div>
     </div>
 </section>
@@ -642,8 +645,8 @@
                 <div class="close" id="cancel">
                     <img src="images/close.png" alt="close">
                 </div>
+                <form action="https://testologia.site/checkout" method="post" id="form2" class="form">
                 <div class="popup-title">Пожалуйста, оставьте свои данные, чтобы мы могли связаться с вами и уточнить детали предстоящей экскурсии</div>
-                <form action="https://testologia.site/checkout" method="post">
                     <label>
                         <input type="text" placeholder="Ваше имя" id="name2">
                         <div class="error">Введите имя</div>
@@ -653,23 +656,24 @@
                         <div class="error">Введите номер телефона</div>
                     </label>
                     <div class="btn">
-                        <button class="btn-gradient" id="registration2">
+                        <button class="btn-gradient" id="getConsultation2">
                             Записаться
                         </button>
                     </div>
                     <label>
-                        <input type="checkbox" class="check">
+                        <input type="checkbox" class="check checked">
                         <span>
                         <img src="images/tick.png" alt="tick">
                     </span>
-                        <div id="agreement2">Нажимая на кнопку, я даю согласие на обработку персональных данных и соглашаюсь с
-                            <a href="#">политикой конфиденциальности</a></div>
+                        <div class="agreement">Нажимая на кнопку, я даю согласие на обработку персональных данных и соглашаюсь с
+                            <a href="#">политикой конфиденциальности</a>
+                        </div>
                         <div class="error-check">Мы не получили Вашего <span>согласия</span></div>
                     </label>
                 </form>
+                <div class="thanks">Спасибо, мы свяжемся с вами в ближайшее время!</div>
             </div>
         </div>
-
     </div>
 </section>
 <footer>
@@ -701,11 +705,14 @@
         </div>
     </div>
 </footer>
+<div class="loader-center" id="loader">
+    <div class="lds-ripple"><div></div><div></div></div>
+</div>
+
 
 <script src="scripts/jquery-3.6.3.min.js"></script>
 <script src="scripts/jquery.inputmask.min.js"></script>
 <script src="scripts/jquery.magnific-popup.min.js"></script>
+<script src="scripts/sweetalert2.all.min.js"></script>
 <script src="scripts/slick.min.js"></script>
 <script src="scripts/main.js"></script>
-</body>
-</html>
