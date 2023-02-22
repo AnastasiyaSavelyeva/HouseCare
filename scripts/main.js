@@ -49,7 +49,7 @@ $(document).ready(function(){
     //more
     const more = $('#more');
     more.click(()=> {
-        $('.hidden').css('display', 'flex');
+        $('.hidden').css('display', 'grid');
         more.hide()
     })
 
@@ -69,27 +69,75 @@ $(document).ready(function(){
         type: 'image'
     });
 
+
+    //comments
+
+    const dialog = $('#dialog'),
+        width = $(window).width(),
+        roundOne = $('#round1'),
+        roundTwo = $('#round2'),
+        roundThree = $('#round3'),
+        roundFour = $('#round4'),
+        roundFive = $('#round5'),
+        textOne = $('#text1'),
+        textTwo = $('#text2'),
+        textThree = $('#text3'),
+        textFour = $('#text4'),
+        textFive = $('#text5'),
+        scheme = $('#scheme'),
+        rounds = $('.round');
+
+
+
+
+    if (width <= 1024) {
+        rounds.click(()=> {
+            scheme.css('padding-bottom', '30px')
+        })
+
+        roundOne.click(()=> {
+            dialog.toggle().html(textOne);
+        })
+        roundTwo.click(()=> {
+            dialog.toggle().html(textTwo);
+        })
+        roundThree.click(()=> {
+            dialog.toggle().html(textThree);
+        })
+        roundFour.click(()=> {
+            dialog.toggle().html(textFour);
+        })
+        roundFive.click(()=> {
+            dialog.toggle().html(textFive);
+        })
+
+    }
+
+
+
+
+
+
+
+
    //form
 
     let loader = $('#loader');
 
+    $('.btn-form').click((e)=> {
 
-
-    $('#getConsultation, #getConsultation2').click((e)=> {
-
-        let name = $('#name');
-        let name2 = $('#name2');
-        let phone = $('#phone');
-        let phone2 = $('#phone2');
-        let form1 = $('#form1');
-        let form2 = $('#form2');
-        let thanks = $('.thanks');
-        let check = $('input[type=checkbox]');
-        let errorCheck = $('.error-check');
-        let hasError = false;
-
-        phone2.inputmask({"mask": "(999) 999-9999"});
-        phone.inputmask({"mask": "(999) 999-9999"});
+        let name = $('#name'),
+         name2 = $('#name2'),
+         phone = $('#phone'),
+         phone2 = $('#phone2'),
+         form1 = $('#form1'),
+         form2 = $('#form2'),
+         thanks = $('.thanks'),
+         check = $('input[type=checkbox]'),
+         errorCheck = $('.error-check'),
+         hasError = false;
+         phone.inputmask({"mask": "(999) 999-9999"});
+         phone2.inputmask({"mask": "(999) 999-9999"});
 
         e.preventDefault();
 
@@ -97,13 +145,12 @@ $(document).ready(function(){
         errorCheck.hide();
         $('input').css('border-color', 'white');
 
-
-       if(!name.val()) {
+      if(!name.val()) {
            name.next().show();
            name.css('border-color', '#ad0707');
            hasError = true;
        }
-       /*if(!name2.val()) {
+/*       if(!name2.val()) {
            name2.next().show();
            name2.css('border-color', '#ad0707');
            hasError = true;
@@ -115,7 +162,7 @@ $(document).ready(function(){
            hasError = true;
        }
 
-       /*if(!phone2.val()) {
+   /*    if(!phone2.val()) {
            phone2.next().show();
            phone2.css('border-color', '#ad0707');
            hasError = true;
@@ -132,7 +179,7 @@ $(document).ready(function(){
             form1.hide();
             $('#consultation-title').hide();
 
-           /* form2.hide();*/
+           form2.hide();
 
             $.ajax({
                 method: "POST",
@@ -153,7 +200,6 @@ $(document).ready(function(){
                             title: 'Возникла ошибка при оформлении заказа',
                             text: 'Попробуйте снова ввести данные или перезвоните нам',
                             confirmButtonColor: '#ecc66b',
-
                         })
                     }
                 });

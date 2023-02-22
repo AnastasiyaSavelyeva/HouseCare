@@ -47,6 +47,9 @@
 .container() {
   max-width: 1200px;
   margin: 0 auto;
+  @media screen and (max-width: 1100px) {
+    padding: 0 15px;
+  }
 }
 
 .logo-name() {
@@ -56,6 +59,7 @@
 }
 
 .call() {
+
   .call-phone {
     font-size: 18px;
     font-family: "Museo Sans Cyrl", sans-serif;
@@ -67,6 +71,7 @@
   .call-effect {
     display: flex;
     margin-top: 21px;
+    justify-content: end;
 
     .circles {
       position: relative;
@@ -149,7 +154,10 @@
     color: @color-gold;
     text-align: center;
     line-height: 1.2;
-  }
+    @media screen and (max-width: 1024px) {
+      font-size: 30px;
+    }
+}
 
 .btn-gradient {
     background-image: -moz-linear-gradient( 0deg, rgb(252,195,114) 0%, rgb(240,219,188) 100%);
@@ -177,86 +185,16 @@
     cursor: pointer;
   }
 
-.project-card-text {
-  .project-description {
-    max-width: 510px;
-    .project-description-title {
-      font-size: 30px;
-      .font-500();
-      color: @color-white;
-      margin-bottom: 40px;
-    }
-    .project-description-text {
-      font-size: 18px;
-      .font-300();
-      color: @color-white;
-    }
-    .project-description-diff {
-      display: flex;
-      justify-content: space-between;
-      margin: 50px 0;
-      div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        .font-500();
-        color: @color-gold;
-        border: 1px solid @color-gold;
-        border-radius: 50%;
-        padding: 0 10px;
-        width: 108px;
-        height: 108px;
-        box-sizing: border-box;
-        text-align: center;
-      }
-    }
-
-
-    a {
-      text-decoration: none;
-      .btn-transparent {
-        width: 365px;
-      }
-      .btn-gradient {
-        width: 365px;
-        margin-bottom: 20px;
-      }
-    }
-
-  }
-}
-
-.project-card-image {
-  .project-images {
-    max-width: 707px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px;
-    .project-image {
-      grid-column: 1/4;
-      grid-row: 1/2;
-    }
-    .project-image-1 {
-      grid-column: 1/2;
-      grid-row: 2/3;
-    }
-    .project-image-2 {
-      grid-column: 2/3;
-      grid-row: 2/3;
-    }
-    .project-image-3 {
-      grid-column: 3/4;
-      grid-row: 2/3;
-    }
-  }
-}
 
 .form() {
+
   form {
     flex-direction: column;
     align-items: center;
     display: flex;
+    @media screen and (max-width: 425px) {
+      width: 287px;
+    }
     input:not(input[type='checkbox']) {
       padding: 22px 27px;
       box-sizing: border-box;
@@ -266,9 +204,16 @@
       width: 409px;
       height: 58px;
       font-size: 18px;
+      @media screen and (max-width: 425px) {
+        font-size: 14px;
+        padding: 18px;
+        width: 270px;
+        align-self: center;
+      }
       .font-300();
       color: @color-white;
       margin-bottom: 20px;
+
       &::placeholder {
         color: @color-white;
       }
@@ -279,14 +224,26 @@
       margin-bottom: 30px;
       width: 409px;
       height: 60px;
+      @media screen and (max-width: 425px) {
+        font-size: 16px;
+        padding: 15px;
+        width: 270px;
+        margin-bottom: 25px;
+      }
     }
 
     label {
       display: flex;
+      @media screen and (max-width: 425px) {
+        width: 270px;
+      }
 
       &:not(:last-child) {
         flex-direction: column;
         width: 409px;
+        @media screen and (max-width: 425px) {
+          width: 270px;
+        }
       }
 
       .error, .error-check {
@@ -295,6 +252,7 @@
         font-size: 14px;
         .font-500();
         margin-top: -20px;
+        margin-left: 20px;
       }
 
       .error-check {
@@ -335,14 +293,16 @@
         }
       }
 
-      div {
+      .agreement {
         width: 314px;
         margin-left: 27px;
         font-size: 14px;
         .font-300();
         color: @color-white;
         line-height: 1.286;
-
+        @media screen and (max-width: 425px) {
+          font-size: 12px;
+        }
         a {
           font-weight: bold;
           color: @color-white;
@@ -357,6 +317,5 @@
 @color-gold: #ecc66b;
 @color-dark: #25252d;
 @color-blue: #31394f;
-
 
 
