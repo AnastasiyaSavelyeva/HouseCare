@@ -96,19 +96,19 @@ $(document).ready(function(){
         })
 
         roundOne.click(()=> {
-            dialog.toggle().html(textOne);
+            dialog.show().html(textOne);
         })
         roundTwo.click(()=> {
-            dialog.toggle().html(textTwo);
+            dialog.show().html(textTwo);
         })
         roundThree.click(()=> {
-            dialog.toggle().html(textThree);
+            dialog.show().html(textThree);
         })
         roundFour.click(()=> {
-            dialog.toggle().html(textFour);
+            dialog.show().html(textFour);
         })
         roundFive.click(()=> {
-            dialog.toggle().html(textFive);
+            dialog.show().html(textFive);
         })
 
     }
@@ -170,7 +170,6 @@ $(document).ready(function(){
 
         if(!check.is(':checked')) {
            errorCheck.show();
-           $('.agreement').hide();
             hasError = true;
         }
 
