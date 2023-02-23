@@ -13,8 +13,9 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   @media screen and (max-width: 425px) {
-     background-image: linear-gradient(to bottom, transparent 80%, @color-dark 100%), url("../images/adaptive.png");
+    background-image: linear-gradient(to bottom, transparent 80%, @color-dark 100%), url("../images/adaptive.png");
   }
+
   .menu {
     display: none;
     flex-direction: column;
@@ -121,12 +122,26 @@ body {
         transform: rotate(-90deg);
         left: -90px;
         top: 470px;
+        animation: moving 1s linear infinite;
+
         @media screen and (max-width: 1200px) {
           top: 370px;
         }
         @media screen and (max-width: 768px) {
-         display: none;
+          display: none;
         }
+
+        /* @keyframes moving {
+           25% {
+             -webkit-transform: translateX(-4px);
+           }
+           50%, 100% {
+             -webkit-transform: translateX(0);
+           }
+           75% {
+             -webkit-transform: translateX(4px);
+           }
+           }*/
 
         .scroll-image {
           display: inline-block;
@@ -716,9 +731,11 @@ body {
       position: relative;
       max-width: 576px;
       margin: 0 auto;
+
       img {
         width: 100%;
       }
+
       @media screen and (max-width: 425px) {
         width: 290px;
       }
@@ -737,6 +754,7 @@ body {
           box-shadow: 0 0 25.5px 4.5px rgba(0, 0, 0, 1);
           width: 15px;
           height: 15px;
+
           &::after {
             content: '';
             position: absolute;
@@ -748,10 +766,12 @@ body {
             width: 25px;
             height: 25px;
           }
+
           &:hover {
             &:after {
               border-color: #fcedcb;
             }
+
             background-color: #fcedcb;
           }
         }
@@ -963,6 +983,7 @@ body {
         padding: 20px 16px;
         margin-top: 20px;
         background-color: #313139;
+
         &:before {
           position: absolute;
           content: '';
@@ -974,12 +995,14 @@ body {
           top: -12px;
           left: 90px;
         }
+
         .sign-title {
           font-size: 18px;
           .font-500();
           color: @color-white;
           margin-bottom: 16px;
         }
+
         .sign-text {
           font-size: 16px;
           .font-100();
@@ -1158,6 +1181,7 @@ body {
         @media screen and (max-width: 425px) {
           padding-top: 40px;
         }
+
         img {
           width: 400px;
           height: 290px;
@@ -1258,8 +1282,10 @@ body {
             @media screen and (max-width: 350px) {
               padding: 0 0 0 16px;
             }
+
             div {
               display: flex;
+
               .dimensions {
                 .font-500();
                 margin-bottom: 20px;
@@ -1267,6 +1293,7 @@ body {
                   display: none;
                 }
               }
+
               .size {
                 .font-300();
                 margin-left: 15px;
@@ -1279,12 +1306,14 @@ body {
                 }
               }
             }
+
             .square {
               .font-500();
               @media screen and (max-width: 500px) {
                 display: none;
               }
             }
+
             .size2 {
               margin-left: 15px;
               .font-300();
@@ -1357,6 +1386,7 @@ body {
           &:not(:last-child) {
             margin-bottom: 20px;
           }
+
           padding: 20px 0 20px 20px;
         }
         @media screen and (max-width: 425px) {
@@ -1378,6 +1408,7 @@ body {
           @media screen and (max-width: 425px) {
             margin-left: 20px;
           }
+
           .two-blocks-title {
             font-size: 18px;
             .font-500();
@@ -1437,6 +1468,7 @@ body {
             margin-top: 40px;
             padding: 25px 28px;
           }
+
           img {
             @media screen and (max-width: 425px) {
               width: 50px;
@@ -1473,6 +1505,7 @@ body {
       @media screen and (max-width: 425px) {
         margin-top: 20px;
       }
+
       .btn-transparent {
         @media screen and (max-width: 425px) {
           font-size: 14px;
@@ -1747,6 +1780,7 @@ body {
           right: 20px;
           top: 20px;
           cursor: pointer;
+
           img {
             @media screen and (max-width: 768px) {
               width: 15px;
@@ -1797,6 +1831,7 @@ footer {
   @media screen and (max-width: 620px) {
     padding: 50px 0 90px 0;
   }
+
   .container {
     .container();
     display: grid;
@@ -1806,6 +1841,7 @@ footer {
       grid-template-columns: 1fr;
       justify-items: center;
     }
+
     .contacts {
       display: flex;
       flex-direction: column;
@@ -1829,7 +1865,7 @@ footer {
 
     .logo {
       text-align: center;
-      margin-right: 80px;
+      margin: 0 auto;
       @media screen and (max-width: 950px) {
         margin-right: 0;
       }
@@ -1855,6 +1891,7 @@ footer {
           display: inline-block;
 
         }
+
         a:hover {
           opacity: .7;
         }

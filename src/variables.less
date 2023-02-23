@@ -8,16 +8,19 @@
   src: url("../fonts/museosanscyrl-100.ttf");
   font-weight: 100;
 }
+
 @font-face {
   font-family: Museosanscyrl;
   src: url("../fonts/museosanscyrl-300.ttf");
   font-weight: 300;
 }
+
 @font-face {
   font-family: Museosanscyrl;
   src: url("../fonts/museosanscyrl-500.ttf");
   font-weight: 500;
 }
+
 @font-face {
   font-family: Museosanscyrl;
   src: url("../fonts/museosanscyrl-700.ttf");
@@ -28,18 +31,22 @@
   font-family: Museosanscyrl, sans-serif;
   font-weight: 100;
 }
+
 .font-300() {
   font-family: Museosanscyrl, sans-serif;
   font-weight: 300;
 }
+
 .font-500() {
   font-family: Museosanscyrl, sans-serif;
   font-weight: 500;
 }
+
 .font-700() {
   font-family: Museosanscyrl, sans-serif;
   font-weight: 700;
 }
+
 .font() {
   font-family: Neumann, sans-serif;
 }
@@ -149,41 +156,41 @@
 }
 
 .title() {
-    .font();
-    font-size: 40px;
-    color: @color-gold;
-    text-align: center;
-    line-height: 1.2;
-    @media screen and (max-width: 1024px) {
-      font-size: 30px;
-    }
+  .font();
+  font-size: 40px;
+  color: @color-gold;
+  text-align: center;
+  line-height: 1.2;
+  @media screen and (max-width: 1024px) {
+    font-size: 30px;
+  }
 }
 
 .btn-gradient {
-    background-image: -moz-linear-gradient( 0deg, rgb(252,195,114) 0%, rgb(240,219,188) 100%);
-    background-image: -webkit-linear-gradient( 0deg, rgb(252,195,114) 0%, rgb(240,219,188) 100%);
-    background-image: -ms-linear-gradient( 0deg, rgb(252,195,114) 0%, rgb(240,219,188) 100%);
-    border-radius: 30px;
-    border: none;
-    padding: 21px;
-    font-size: 18px;
-    color: @color-dark;
-    text-align: center;
-    .font-700();
-    cursor: pointer;
-  }
+  background-image: -moz-linear-gradient(0deg, rgb(252, 195, 114) 0%, rgb(240, 219, 188) 100%);
+  background-image: -webkit-linear-gradient(0deg, rgb(252, 195, 114) 0%, rgb(240, 219, 188) 100%);
+  background-image: -ms-linear-gradient(0deg, rgb(252, 195, 114) 0%, rgb(240, 219, 188) 100%);
+  border-radius: 30px;
+  border: none;
+  padding: 21px;
+  font-size: 18px;
+  color: @color-dark;
+  text-align: center;
+  .font-700();
+  cursor: pointer;
+}
 
 .btn-transparent {
-    border: 1px solid @color-white;
-    border-radius: 30px;
-    font-size: 18px;
-    .font-700();
-    color: @color-white;
-    padding: 21px;
-    text-align: center;
-    background-color: transparent;
-    cursor: pointer;
-  }
+  border: 1px solid @color-white;
+  border-radius: 30px;
+  font-size: 18px;
+  .font-700();
+  color: @color-white;
+  padding: 21px;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 
 .form() {
@@ -195,6 +202,7 @@
     @media screen and (max-width: 425px) {
       width: 287px;
     }
+
     input:not(input[type='checkbox']) {
       padding: 22px 27px;
       box-sizing: border-box;
@@ -257,6 +265,7 @@
 
       .error-check {
         margin-top: 0;
+
         span {
           cursor: pointer;
           color: @color-white;
@@ -281,6 +290,7 @@
           visibility: hidden;
         }
       }
+
       input[type='checkbox']:checked + span {
         display: inline-block;
         box-sizing: border-box;
@@ -303,6 +313,7 @@
         @media screen and (max-width: 425px) {
           font-size: 12px;
         }
+
         a {
           font-weight: bold;
           color: @color-white;

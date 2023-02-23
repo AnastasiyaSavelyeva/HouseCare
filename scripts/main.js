@@ -1,6 +1,11 @@
 'use strict'
 
 $(document).ready(function(){
+    //wow
+    new WOW({
+        animateClass: 'animate__animated'
+    }).init();
+
     //slider
     $('.slider').slick({
         prevArrow: '.arrow-prev',
@@ -88,8 +93,6 @@ $(document).ready(function(){
         rounds = $('.round');
 
 
-
-
     if (width <= 1024) {
         rounds.click(()=> {
             scheme.css('padding-bottom', '30px')
@@ -110,34 +113,30 @@ $(document).ready(function(){
         roundFive.click(()=> {
             dialog.show().html(textFive);
         })
-
     }
-
-
-
-
-
-
 
 
    //form
 
     let loader = $('#loader');
 
+    let phone = $('#phone'),
+    phone2 = $('#phone2');
+    phone.inputmask({"mask": "+7 (999) 999-99-99"});
+    phone2.inputmask({"mask": "+7 (999) 999-99-99"});
+
     $('.btn-form').click((e)=> {
 
         let name = $('#name'),
          name2 = $('#name2'),
-         phone = $('#phone'),
-         phone2 = $('#phone2'),
          form1 = $('#form1'),
          form2 = $('#form2'),
          thanks = $('.thanks'),
+         agree = $('.agreement'),
          check = $('input[type=checkbox]'),
          errorCheck = $('.error-check'),
          hasError = false;
-         phone.inputmask({"mask": "(999) 999-9999"});
-         phone2.inputmask({"mask": "(999) 999-9999"});
+
 
         e.preventDefault();
 
@@ -170,6 +169,7 @@ $(document).ready(function(){
 
         if(!check.is(':checked')) {
            errorCheck.show();
+            agree.hide();
             hasError = true;
         }
 
@@ -194,6 +194,7 @@ $(document).ready(function(){
                         $('#consultation-title').show();
                         form1.trigger("reset");
                         form1.show();
+                        agree.show();
                         Swal.fire({
                             icon: 'error',
                             title: 'Возникла ошибка при оформлении заказа',
@@ -204,8 +205,6 @@ $(document).ready(function(){
                 });
         }
     })
-
-
 
 
 
