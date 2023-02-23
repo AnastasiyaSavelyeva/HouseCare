@@ -118,9 +118,11 @@ body {
 
       .scroll {
         position: absolute;
-        display: flex;
+        display: grid;
+        grid-template-columns: 150px;
+        row-gap: 70px;
         transform: rotate(-90deg);
-        left: -90px;
+        left: -70px;
         top: 470px;
         animation: moving 1s linear infinite;
 
@@ -131,31 +133,33 @@ body {
           display: none;
         }
 
-        /* @keyframes moving {
-           25% {
-             -webkit-transform: translateX(-4px);
-           }
-           50%, 100% {
-             -webkit-transform: translateX(0);
-           }
-           75% {
-             -webkit-transform: translateX(4px);
-           }
-           }*/
+        @keyframes moving {
+          0% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(20px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
 
         .scroll-image {
           display: inline-block;
-          transform: rotate(90deg);
-          margin-right: 51px;
+          text-align: center;
+          grid-column: 1/1;
+          grid-row: 2/3;
         }
 
         .scroll-text {
           .font-500();
-          display: inline-block;
           font-size: 18px;
+          margin-bottom: 20px;
           color: #BABABAFF;
-          line-height: 3.333;
-          text-align: center;
+          transform: rotate(-90deg);
+          grid-column: 1/1;
+          grid-row: 1/2;
         }
       }
 
@@ -1865,7 +1869,8 @@ footer {
 
     .logo {
       text-align: center;
-      margin: 0 auto;
+
+
       @media screen and (max-width: 950px) {
         margin-right: 0;
       }
