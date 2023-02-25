@@ -11,6 +11,7 @@ $(document).ready(function(){
     //slider
 
     $('.slider').slick({
+        autoplay: true,
         slidesToScroll: 1,
         prevArrow: '.arrow-prev',
         nextArrow: '.arrow-next',
@@ -20,7 +21,7 @@ $(document).ready(function(){
         arrows: true,
         dotsClass: 'slick-dots',
         centerMode: true,
-        slidesToShow: 2,
+        slidesToShow: 3,
         responsive: [
             {
                 breakpoint: 768,

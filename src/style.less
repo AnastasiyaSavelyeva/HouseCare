@@ -212,14 +212,14 @@ body {
 
         a {
           text-decoration: none;
-
+          &:hover {
+            box-shadow: 1px 1px 25px 5px @color-gold;
+          }
           .btn {
             .btn-gradient();
             width: 300px;
             box-sizing: border-box;
-            &:hover {
-              box-shadow: 1px 1px 25px 5px @color-gold;
-            }
+
             @media screen and (max-width: 425px) {
               width: 228px;
               padding: 18px;
@@ -1574,6 +1574,9 @@ body {
       display: flex;
       justify-content: center;
       margin-top: 60px;
+      a {
+        text-decoration: none;
+      }
       @media screen and (max-width: 425px) {
         margin-top: 20px;
       }
