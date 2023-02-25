@@ -7,9 +7,11 @@ new WOW({
 
 
 $(document).ready(function(){
-    
+
     //slider
+
     $('.slider').slick({
+        slidesToScroll: 1,
         prevArrow: '.arrow-prev',
         nextArrow: '.arrow-next',
         dots: true,
@@ -18,8 +20,7 @@ $(document).ready(function(){
         arrows: true,
         dotsClass: 'slick-dots',
         centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
+        slidesToShow: 2,
         responsive: [
             {
                 breakpoint: 768,
@@ -94,7 +95,6 @@ $(document).ready(function(){
         scheme = $('#scheme'),
         rounds = $('.round');
 
-
     if (width <= 1024) {
         rounds.click(()=> {
             scheme.css('padding-bottom', '30px')
@@ -133,6 +133,7 @@ $(document).ready(function(){
         check = $('input[type=checkbox]'),
         thanks2 = $('#thanks2'),
         agree2 = $('#agreement2'),
+        title = $('#title1'),
         errorCheck = $('.error-check');
 
 
@@ -170,8 +171,7 @@ $(document).ready(function(){
         if(!hasError) {
             loader.css('display', 'flex')
             form1.hide();
-            $('#title1').hide();
-
+            title.hide();
 
             $.ajax({
                 method: "POST",
@@ -187,6 +187,7 @@ $(document).ready(function(){
                         $('#consultation-title').show();
                         form1.trigger("reset");
                         form1.show();
+                        title.show();
                         agree1.show();
                         Swal.fire({
                             icon: 'error',

@@ -1199,8 +1199,8 @@ body {
     }
 
     .slider {
-
       max-width: 1050px;
+      margin: 80px auto 0;
       @media screen and (max-width: 1200px) {
         max-width: 800px;
       }
@@ -1213,7 +1213,6 @@ body {
       @media screen and (max-width: 670px) {
         margin: 30px auto 0;
       }
-      margin: 80px auto 0;
 
       .slick-dots {
         display: flex;
@@ -1240,7 +1239,9 @@ body {
 
       .slick-slide {
         padding-top: 70px;
-        filter: blur(2px);
+        filter: brightness(50%);
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent;
         @media screen and (max-width: 425px) {
           padding-top: 40px;
         }
@@ -1996,7 +1997,6 @@ footer {
         a:nth-child(2) {
           margin: 0 30px;
           display: inline-block;
-
         }
 
         a:hover {
