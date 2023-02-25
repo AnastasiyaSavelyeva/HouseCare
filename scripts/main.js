@@ -1,11 +1,13 @@
+
 'use strict'
+//wow
+new WOW({
+    animateClass: 'animate__animated'
+}).init();
+
 
 $(document).ready(function(){
-    //wow
-    new WOW({
-        animateClass: 'animate__animated'
-    }).init();
-
+    
     //slider
     $('.slider').slick({
         prevArrow: '.arrow-prev',
@@ -116,85 +118,133 @@ $(document).ready(function(){
     }
 
 
-   //form
+    //form
 
     let loader = $('#loader');
 
-    let phone = $('#phone'),
-    phone2 = $('#phone2');
-    phone.inputmask({"mask": "+7 (999) 999-99-99"});
+    let phone1 = $('#phone1'),
+        phone2 = $('#phone2'),
+        name1 = $('#name1'),
+        name2 = $('#name2'),
+        form1 = $('#form1'),
+        form2 = $('#form2'),
+        thanks1 = $('#thanks1'),
+        agree1 = $('#agreement1'),
+        check = $('input[type=checkbox]'),
+        thanks2 = $('#thanks2'),
+        agree2 = $('#agreement2'),
+        errorCheck = $('.error-check');
+
+
+    phone1.inputmask({"mask": "+7 (999) 999-99-99"});
     phone2.inputmask({"mask": "+7 (999) 999-99-99"});
 
-    $('.btn-form').click((e)=> {
+    $('#submit1').click((e)=> {
 
-        let name = $('#name'),
-         name2 = $('#name2'),
-         form1 = $('#form1'),
-         form2 = $('#form2'),
-         thanks = $('.thanks'),
-         agree = $('.agreement'),
-         check = $('input[type=checkbox]'),
-         errorCheck = $('.error-check'),
-         hasError = false;
-
+        let hasError = false;
 
         e.preventDefault();
 
         $('.error').hide();
+        agree1.hide();
         errorCheck.hide();
         $('input').css('border-color', 'white');
 
-      if(!name.val()) {
-           name.next().show();
-           name.css('border-color', '#ad0707');
-           hasError = true;
-       }
-/*       if(!name2.val()) {
-           name2.next().show();
-           name2.css('border-color', '#ad0707');
-           hasError = true;
-       }*/
+        if(!name1.val()) {
+            name1.next().show();
+            name1.css('border-color', '#ad0707');
+            hasError = true;
+        }
 
-       if(!phone.val()) {
-           phone.next().show();
-           phone.css('border-color', '#ad0707');
-           hasError = true;
-       }
-
-   /*    if(!phone2.val()) {
-           phone2.next().show();
-           phone2.css('border-color', '#ad0707');
-           hasError = true;
-       }*/
+        if(!phone1.val()) {
+            phone1.next().show();
+            phone1.css('border-color', '#ad0707');
+            hasError = true;
+        }
 
         if(!check.is(':checked')) {
-           errorCheck.show();
-            agree.hide();
+            errorCheck.show();
             hasError = true;
         }
 
         if(!hasError) {
             loader.css('display', 'flex')
             form1.hide();
-            $('#consultation-title').hide();
+            $('#title1').hide();
 
-           form2.hide();
 
             $.ajax({
                 method: "POST",
                 url: "https://testologia.site/checkout",
-                data: {name: name.val(), phone: phone.val(), check: check.checked}
+                data: {name: name1.val(), phone: phone1.val(), check: check.checked}
             })
                 .done(function (msg) {
                     loader.hide()
                     if (msg.success) {
-                        thanks.css('display', 'flex');
+                        thanks1.css('display', 'flex');
 
                     } else {
                         $('#consultation-title').show();
                         form1.trigger("reset");
                         form1.show();
-                        agree.show();
+                        agree1.show();
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Возникла ошибка при оформлении заказа',
+                            text: 'Попробуйте снова ввести данные или перезвоните нам',
+                            confirmButtonColor: '#ecc66b',
+                        })
+                    }
+                });
+        }
+    });
+
+    $('#submit2').click((e)=> {
+        let hasError = false;
+
+        e.preventDefault();
+``
+        $('.error').hide();
+        agree2.hide();
+        errorCheck.hide();
+        $('input').css('border-color', 'white');
+
+        if(!name2.val()) {
+            name2.next().show();
+            name2.css('border-color', '#ad0707');
+            hasError = true;
+        }
+
+        if(!phone2.val()) {
+            phone2.next().show();
+            phone2.css('border-color', '#ad0707');
+            hasError = true;
+        }
+
+        if(!check.is(':checked')) {
+            errorCheck.show();
+            hasError = true;
+        }
+
+        if(!hasError) {
+            loader.css('display', 'flex')
+            form2.hide();
+
+            $.ajax({
+                method: "POST",
+                url: "https://testologia.site/checkout",
+                data: {name: name2.val(), phone: phone2.val(), check: check.checked}
+            })
+                .done(function (msg) {
+                    loader.hide()
+                    if (msg.success) {
+                        thanks2.css('display', 'flex');
+
+                    } else {
+                        $('#consultation-title').show();
+                        form2.trigger("reset");
+                        form2.show();
+                        agree2.show();
                         Swal.fire({
                             icon: 'error',
                             title: 'Возникла ошибка при оформлении заказа',
@@ -205,9 +255,6 @@ $(document).ready(function(){
                 });
         }
     })
-
-
-
 
 
 });

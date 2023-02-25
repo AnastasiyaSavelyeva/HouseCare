@@ -1124,6 +1124,9 @@ body {
           .step-sign {
             position: absolute;
             z-index: 10;
+            &:hover {
+              transform: scale(1.2);
+            }
           }
 
           .step-number {
@@ -1139,10 +1142,7 @@ body {
 
         .step-description {
           width: 263px;
-          margin-left: 8px;
-          @media screen and (max-width: 768px) {
-            margin-left: 19px;
-          }
+          margin-left: 18px;
 
           .step-title {
             font-size: 18px;
@@ -1458,6 +1458,9 @@ body {
         }
 
         .two-blocks-image {
+          &:hover {
+            transform: scale(1.2);
+          }
           @media screen and (max-width: 425px) {
             align-self: start;
             img {
@@ -1527,12 +1530,17 @@ body {
           border: 1px solid @color-gold;
           border-radius: 50%;
           padding: 36px 40px;
+
+          &:hover {
+            transform: scale(1.2);
+          }
           @media screen and (max-width: 425px) {
             margin-top: 40px;
             padding: 25px 28px;
           }
 
           img {
+            width: 70px;
             @media screen and (max-width: 425px) {
               width: 50px;
             }
@@ -1857,13 +1865,13 @@ body {
         @media screen and (max-width: 768px) {
           padding: 0;
           width: 430px;
+          height: 440px;
           left: calc(50% - 215px);
+          top: calc(50% - 220px);
         }
         @media screen and (max-width: 425px) {
           width: 286px;
-          top: calc(50% - 220px);
           left: calc(50% - 143px);
-          height: 440px;
         }
 
         .close {
@@ -1911,6 +1919,13 @@ body {
           color: @color-gold;
           text-align: center;
           line-height: 1.2;
+          @media screen and (max-width: 768px) {
+            margin-top: 150px;
+            font-size: 40px;
+          }
+          @media screen and (max-width: 425px) {
+            margin-top: 100px;
+          }
         }
       }
     }
