@@ -11,7 +11,6 @@ $(document).ready(function(){
     //slider
 
     $('.slider').slick({
-        autoplay: true,
         slidesToScroll: 1,
         prevArrow: '.arrow-prev',
         nextArrow: '.arrow-next',
