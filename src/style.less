@@ -1250,6 +1250,7 @@ body {
         img {
           width: 400px;
           height: 290px;
+          z-index: 30;
         }
 
         .slide-description {
@@ -1265,8 +1266,10 @@ body {
         }
 
         img {
-          width: 590px;
+          /*width: 590px;*/
+          transform: scaleX(1.5);
           height: 420px;
+          z-index: 100;
           position: relative;
           @media screen and (max-width: 950px) {
             width: 450px;
@@ -1282,17 +1285,20 @@ body {
           justify-content: space-between;
           align-items: center;
           position: absolute;
+          z-index: 150;
           bottom: 0;
           height: 80px;
           background-color: #313139;
           color: @color-white;
           padding: 15px;
           box-sizing: border-box;
-          width: 590px;
+          width: 600px;
+          margin-left: -100px;
 
           @media screen and (max-width: 950px) {
             font-size: 16px;
-            width: 450px;
+            width: 455px;
+            margin-left: 0;
           }
           @media screen and (max-width: 475px) {
             justify-content: center;
@@ -1300,7 +1306,8 @@ body {
             height: 95px;
           }
           @media screen and (max-width: 320px) {
-            width: 290px;
+            width: 295px;
+            margin-left: -5px;
           }
 
           .slide-description-one {
@@ -1314,8 +1321,8 @@ body {
               padding: 0 30px 0 30px;
             }
             @media screen and (max-width: 425px) {
-              width: 170px;
-              padding: 0 10px 0 20px;
+              width: 190px;
+              padding: 0 40px 0 10px;
             }
             @media screen and (max-width: 350px) {
               padding: 0 8px;
@@ -1324,6 +1331,9 @@ body {
             .slide-name {
               margin-bottom: 20px;
               .font-500();
+              @media screen and (max-width: 425px) {
+                margin-bottom: 10px;
+              }
             }
 
             .slide-address {
