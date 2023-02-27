@@ -27,10 +27,21 @@ body {
     top: 0;
     padding: 35px 90px 0 0;
     background-color: @color-dark;
-    @media screen and (max-width: 425px) {
-      width: 50%;
+
+    @media screen and (max-width: 1150px) {
+      padding-right: 50px;
+      width: 22%;
+      height: 120%;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 40%;
       padding-right: 15px;
       height: 120%;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 50%;
     }
 
     .close {
@@ -190,7 +201,7 @@ body {
             font-size: 35px;
           }
           @media screen and (max-width: 425px) {
-            font-size: 25px;
+            font-size: 26px;
             margin-bottom: 15px;
           }
         }
@@ -215,17 +226,15 @@ body {
           &:hover {
             box-shadow: 1px 1px 25px 5px @color-gold;
           }
-          .btn {
             .btn-gradient();
             width: 300px;
             box-sizing: border-box;
 
             @media screen and (max-width: 425px) {
               width: 228px;
-              padding: 18px;
+              padding: 17px;
               font-size: 16px;
             }
-          }
         }
       }
 
@@ -1266,7 +1275,6 @@ body {
         }
 
         img {
-          /*width: 590px;*/
           transform: scaleX(1.5);
           height: 420px;
           z-index: 100;
