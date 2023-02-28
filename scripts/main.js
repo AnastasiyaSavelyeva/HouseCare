@@ -8,6 +8,17 @@ new WOW({
 
 $(document).ready(function(){
 
+    //progress-bar
+
+    const progressBarElement = $('.progress-bar-value');
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    $(window).scroll(() => {
+        const windowScroll = window.scrollY;
+        const progressBarWidth = (windowScroll / windowHeight);
+        progressBarElement.attr('style', `transform: scaleX(${progressBarWidth});`);
+    });
+
     //slider
 
     $('.slider').slick({
