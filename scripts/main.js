@@ -215,7 +215,6 @@ $(document).ready(function(){
         let hasError = false;
 
         e.preventDefault();
-``
         $('.error').hide();
         agree2.hide();
         errorCheck.hide();
