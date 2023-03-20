@@ -26,7 +26,7 @@ $(document).ready(function(){
         prevArrow: '.arrow-prev',
         nextArrow: '.arrow-next',
         dots: true,
-        infinite: false,
+        infinite: true,
         variableWidth: true,
         arrows: true,
         dotsClass: 'slick-dots',
