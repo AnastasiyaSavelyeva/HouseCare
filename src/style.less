@@ -36,8 +36,6 @@ body {
     }
   }
 
-
-
   .menu {
     display: none;
     flex-direction: column;
@@ -47,7 +45,7 @@ body {
     height: 140%;
     z-index: 50;
     top: 0;
-    padding: 35px 90px 0 0;
+    padding: 35px 90px 0 20px;
     background-color: @color-dark;
 
     @media screen and (max-width: 1150px) {
@@ -85,9 +83,9 @@ body {
     li {
       list-style: none;
       margin-bottom: 31px;
+      transition: .2s ease all;
 
       &:hover {
-        margin-left: 18px;
         list-style: outside;
         color: @color-gold;
       }
@@ -97,9 +95,11 @@ body {
         font-size: 18px;
         .font-300();
         color: @color-white;
+        transition: .2s ease all;
 
         &:hover {
           color: @color-gold;
+          margin-left: 18px;
           font-size: 18px;
           .font-300();
         }
@@ -112,6 +112,7 @@ body {
       a:nth-child(2) {
         margin: 0 30px;
         display: inline-block;
+        transition: .2s ease all;
       }
 
       a:hover {
@@ -245,6 +246,7 @@ body {
 
         a {
           text-decoration: none;
+          transition: .2s ease all;
           &:hover {
             box-shadow: 1px 1px 25px 5px @color-gold;
           }
@@ -273,6 +275,7 @@ body {
         a {
           margin: 15px;
           display: inline-block;
+          transition: .2s ease all;
 
           &:hover {
             opacity: .7;
@@ -417,6 +420,7 @@ body {
           width: 365px;
           box-sizing: border-box;
           margin-bottom: 20px;
+          transition: .2s ease all;
           &:hover {
             box-shadow: 1px 1px 25px 5px @color-gold;
           }
@@ -445,6 +449,7 @@ body {
           box-sizing: border-box;
           position: relative;
           overflow: hidden;
+          transition: .2s ease all;
           &:hover {
             box-shadow: 1px 1px 25px 5px rgba(255, 255, 255, 0.4);
           }
@@ -658,6 +663,7 @@ body {
           width: 365px;
           margin-bottom: 20px;
           box-sizing: border-box;
+          transition: .2s ease all;
           &:hover {
             box-shadow: 1px 1px 25px 5px @color-gold;
           }
@@ -686,6 +692,7 @@ body {
           box-sizing: border-box;
           position: relative;
           overflow: hidden;
+          transition: .2s ease all;
           &:hover {
             box-shadow: 1px 1px 25px 5px rgba(255, 255, 255, 0.4);
           }
@@ -1155,6 +1162,7 @@ body {
           .step-sign {
             position: absolute;
             z-index: 10;
+            transition: .2s ease all;
             &:hover {
               transform: scale(1.2);
             }
@@ -1500,6 +1508,7 @@ body {
         }
 
         .two-blocks-image {
+          transition: .2s ease all;
           &:hover {
             transform: scale(1.2);
           }
@@ -1572,6 +1581,7 @@ body {
           border: 1px solid @color-gold;
           border-radius: 50%;
           padding: 36px 40px;
+          transition: .2s ease all;
 
           &:hover {
             transform: scale(1.2);
@@ -1625,6 +1635,7 @@ body {
       .btn-transparent {
         position: relative;
         overflow: hidden;
+        transition: .2s ease all;
         &:hover {
           box-shadow: 1px 1px 25px 5px rgba(255, 255, 255, 0.4);
         }
@@ -1867,6 +1878,7 @@ body {
 
       .btn-gradient {
         width: 306px;
+        transition: .2s ease all;
         &:hover {
           box-shadow: 1px 1px 25px 5px @color-gold;
         }
@@ -1907,6 +1919,7 @@ body {
         z-index: 300;
         top: calc(50% - 280px);
         left: calc(50% - 240px);
+        transition: .2s ease all;
         @media screen and (max-width: 768px) {
           padding: 0;
           width: 430px;
@@ -2041,6 +2054,7 @@ footer {
         a:nth-child(2) {
           margin: 0 30px;
           display: inline-block;
+          transition: .2s ease all;
         }
 
         a:hover {

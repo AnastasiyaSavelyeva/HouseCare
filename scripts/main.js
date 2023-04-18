@@ -34,12 +34,17 @@ $(document).ready(function(){
         slidesToShow: 3,
         responsive: [
             {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
                 breakpoint: 768,
                 settings: {
                     arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
-                    slidesToShow: 3
                 }
             },
             {
@@ -48,7 +53,6 @@ $(document).ready(function(){
                     arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
-                    slidesToShow: 1
                 }
             }
         ]
@@ -141,11 +145,13 @@ $(document).ready(function(){
         form2 = $('#form2'),
         thanks1 = $('#thanks1'),
         agree1 = $('#agreement1'),
-        check = $('input[type=checkbox]'),
+        check1 = $('#check1'),
+        check2 = $('#check2'),
         thanks2 = $('#thanks2'),
         agree2 = $('#agreement2'),
         title = $('#title1'),
-        errorCheck = $('.error-check');
+        errorCheck1 = $('#error-check1'),
+        errorCheck2 = $('#error-check2');
 
 
     phone1.inputmask({"mask": "+7 (999) 999-99-99"});
@@ -159,7 +165,7 @@ $(document).ready(function(){
 
         $('.error').hide();
         agree1.hide();
-        errorCheck.hide();
+        errorCheck1.hide();
         $('input').css('border-color', 'white');
 
         if(!name1.val()) {
@@ -174,8 +180,8 @@ $(document).ready(function(){
             hasError = true;
         }
 
-        if(!check.is(':checked')) {
-            errorCheck.show();
+        if(!check1.is(':checked')) {
+            errorCheck1.show();
             hasError = true;
         }
 
@@ -187,7 +193,7 @@ $(document).ready(function(){
             $.ajax({
                 method: "POST",
                 url: "https://testologia.site/checkout",
-                data: {name: name1.val(), phone: phone1.val(), check: check.checked}
+                data: {name: name1.val(), phone: phone1.val()}
             })
                 .done(function (msg) {
                     loader.hide()
@@ -217,7 +223,7 @@ $(document).ready(function(){
         e.preventDefault();
         $('.error').hide();
         agree2.hide();
-        errorCheck.hide();
+        errorCheck2.hide();
         $('input').css('border-color', 'white');
 
         if(!name2.val()) {
@@ -232,8 +238,8 @@ $(document).ready(function(){
             hasError = true;
         }
 
-        if(!check.is(':checked')) {
-            errorCheck.show();
+        if(!check2.is(':checked')) {
+            errorCheck2.show();
             hasError = true;
         }
 
@@ -244,7 +250,7 @@ $(document).ready(function(){
             $.ajax({
                 method: "POST",
                 url: "https://testologia.site/checkout",
-                data: {name: name2.val(), phone: phone2.val(), check: check.checked}
+                data: {name: name2.val(), phone: phone2.val()}
             })
                 .done(function (msg) {
                     loader.hide()
@@ -266,6 +272,5 @@ $(document).ready(function(){
                 });
         }
     })
-
 
 });
