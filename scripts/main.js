@@ -132,6 +132,34 @@ $(document).ready(function(){
         })
     }
 
+    //scrolling
+
+    $('.scrolling').on('click', function(e) {
+        e.preventDefault();
+        $('#title1')[0].scrollIntoView({behavior: "smooth"});
+    })
+
+    $('.catalog-scroll').on('click', function(e) {
+        e.preventDefault();
+        $('.carousel')[0].scrollIntoView({behavior: "smooth"});
+    })
+
+    $('.project-scroll').on('click', function(e) {
+        e.preventDefault();
+        $('.project')[0].scrollIntoView({behavior: "smooth"});
+    })
+
+    $('.guarantees-scroll').on('click', function(e) {
+        e.preventDefault();
+        $('.guarantees')[0].scrollIntoView({behavior: "smooth"});
+    })
+
+    $('.technologies-scroll').on('click', function(e) {
+        e.preventDefault();
+        $('.scheme')[0].scrollIntoView({behavior: "smooth"});
+    })
+
+
 
     //form
 
